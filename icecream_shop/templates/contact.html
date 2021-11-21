@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %} Contact {% endblock title %}
+
+{%block body %}
+<div class="container-fluid px-0">
+  <h2 style=" color: rgb(241, 241, 241);
+    left: 44%; top: 30%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    text-transform: uppercase;
+    position: absolute;
+
+  ">Contact Us</h2>
+  <img src="/static/img/7.jpg" width="100%">
+</div>'
+
+<form method="POST" action="/contact">
+  {% csrf_token %}
+  <div class="container my-4">
+
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control" name="email" id="email" placeholder="Enter your Email" />
+    </div>
+
+    <div class="mb-3">
+      <label for="msg" class="form-label">Message</label>
+      <textarea class="form-control" id="msg" name="msg" rows="3"></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-secondary btn-lg" name="submit">Submit</button>
+
+  </div>
+</form>
+{% endblock body %}
